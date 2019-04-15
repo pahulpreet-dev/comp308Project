@@ -27,6 +27,10 @@ const HealthSchema = new Schema({
         type: String, default: '',
         trim: true
     },
+    patient: {
+        type: Schema.ObjectId,
+        ref: 'Patient'
+    },
     creator: {
         type: Schema.ObjectId,
         ref: 'Nurse'

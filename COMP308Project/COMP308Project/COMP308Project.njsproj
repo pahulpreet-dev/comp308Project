@@ -29,16 +29,25 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\controllers\index.server.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\controllers\nurse.server.controller.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\models\healthdata.server.model.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\models\motivation.server.model.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\models\nurse.server.model.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\models\patient.server.model.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\routes\index.server.route.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\routes\nurse.server.route.js">
@@ -50,7 +59,6 @@
     <Compile Include="config\env\test.js" />
     <Compile Include="config\express.js" />
     <Compile Include="config\mongoose.js" />
-    <Compile Include="config\passport.js" />
     <Compile Include="config\strategies\facebook.js" />
     <Compile Include="config\strategies\google.js" />
     <Compile Include="config\strategies\local.js" />

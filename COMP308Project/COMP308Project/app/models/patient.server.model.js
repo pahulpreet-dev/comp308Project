@@ -31,6 +31,17 @@ const PatientSchema = new Schema({
         type: Number,
         minlength: 10
     },
+    health_data: [{ type: Schema.Types.ObjectId, ref: 'Health' }],
+    salt: {
+        type: String
+    },
+    provider: {
+        type: String,
+        // Validate 'provider' value existance
+        required: 'Provider is required'
+    },
+    providerId: String,
+    providerData: {},
     created: {
         type: Date,
         // Create a default 'created' value
