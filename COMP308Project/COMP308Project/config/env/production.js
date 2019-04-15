@@ -1,6 +1,6 @@
 ﻿// Set the 'production' environment configuration object
 module.exports = {
-    db: 'mongodb://localhost/Assignment3DB',
+    db: 'mongodb://localhost/COMP308ProjectDB',
     sessionSecret: 'productionSessionSecret',
     facebook: {
         clientID: 'Facebook Application ID',

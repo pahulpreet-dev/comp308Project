@@ -9,11 +9,11 @@ const PatientSchema = new Schema({
     lastName: String,
     patientID: {
         type: String,
-        // Set a unique 'username' index
+        // Set a unique 'patientID' index
         unique: true,
-        // Validate 'username' value existance
-        required: 'Username is required',
-        // Trim the 'username' field
+        // Validate 'patientID' value existance
+        required: 'patientID is required',
+        // Trim the 'patientID' field
         trim: true
     },
     password: {

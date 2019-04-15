@@ -1,6 +1,6 @@
 ﻿const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const CourseSchema = new Schema({
+const HealthSchema = new Schema({
     created: {
         type: Date,
         default: Date.now
@@ -32,4 +32,4 @@ const CourseSchema = new Schema({
         ref: 'Nurse'
     }
 });
-mongoose.model('Course', CourseSchema);
+mongoose.model('Health', HealthSchema);
