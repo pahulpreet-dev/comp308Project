@@ -52,11 +52,7 @@ module.exports = function () {
     app.use('/lib', express.static(path.resolve('./node_modules')));
 
     // Load the routing files	
-    require('../app/routes/users.server.routes.js')(app);
-    require('../app/routes/articles.server.routes.js')(app);
-
-    require('../app/routes/courses.server.routes.js')(app);
-    require('../app/routes/index.server.routes.js')(app);
+    require('../app/routes/nurse.server.route')(app);
 
     // Return the Express application instance
     return app;

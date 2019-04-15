@@ -41,7 +41,7 @@
     <Compile Include="app\models\patient.server.model.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="app\routes\nurse.server.route.js">
+    <Compile Include="app\routes\nurse.server.routes.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="config\config.js" />
@@ -63,6 +63,12 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="app\views\index.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\indexNurse.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\indexPatient.ejs">
       <SubType>Code</SubType>
     </Content>
     <Content Include="app\views\signinNurse.ejs">
