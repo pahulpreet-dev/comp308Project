@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sign in</title>
+    <link rel="stylesheet" type="text/css" href="../../public/css/addstyle.css" />
+    <style>
+        /* Add padding to containers */
+        .container {
+            padding: 16px;
+        }
+
+        /* Full-width inputs */
+        input[type=text], input[type=password] {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+        }
+
+        /* Add a hover effect for buttons */
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <form class="form1" method="post" action="/indexNurse">
+        <div class="container">
+            <label for="email"><b>Email : </b></label><br />
+            <input name="email" placeholder="Email" type="text" required><br /><br />
+            <label for="password"><b>Password : </b></label><br />
+            <input name="password" placeholder="Password" type="password" required><br /><br />
+            <button type="submit" class="button" formmethod="post">Login</button>
+        </div>
+    </form>
+</body>
+</html>

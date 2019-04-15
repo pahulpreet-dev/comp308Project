@@ -47,10 +47,12 @@
     <Compile Include="app\models\patient.server.model.js">
       <SubType>Code</SubType>
     </Compile>
+
     <Compile Include="app\routes\index.server.route.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\routes\nurse.server.route.js">
+
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="config\config.js" />
@@ -64,7 +66,31 @@
     <Compile Include="config\strategies\local.js" />
     <Compile Include="config\strategies\twitter.js" />
     <Compile Include="server.js" />
+    <Content Include="app\views\deskNurse.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\deskPatient.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\index.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\indexNurse.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\indexPatient.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\signinNurse.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\signinPatient.ejs">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
+    <Content Include="public\css\addstyle.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +102,9 @@
     <Folder Include="config\env\" />
     <Folder Include="config\strategies\" />
     <Folder Include="app\" />
+    <Folder Include="public\" />
+    <Folder Include="public\css\" />
+    <Folder Include="public\img\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
