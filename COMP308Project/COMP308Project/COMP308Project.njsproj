@@ -35,7 +35,7 @@
     <Compile Include="app\controllers\nurse.server.controller.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="app\models\healthdata.server.model.js">
+    <Compile Include="app\models\health.server.model.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\models\motivation.server.model.js">
@@ -47,12 +47,10 @@
     <Compile Include="app\models\patient.server.model.js">
       <SubType>Code</SubType>
     </Compile>
-
     <Compile Include="app\routes\index.server.route.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\routes\nurse.server.route.js">
-
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="config\config.js" />

@@ -2,7 +2,7 @@
 const Patient = require('mongoose').model('Patient');
 const Motivation = require('mongoose').model('Motivation');
 const HealthData = require('mongoose').model('Health');
-/*
+
 
 // Create a new error handling controller method
 const getErrorMessage = function (err) {
@@ -47,7 +47,7 @@ exports.signup = function (req, res) {
             // Remove sensitive data before login
             nurse.password = undefined;
             nurse.salt = undefined;
-
+            res.status(200).json(nurse);
             // Login the user
             req.login(nurse, function (err) {
                 if (err) {
@@ -98,7 +98,7 @@ exports.listQuotes = function (req, res) {
 };
 
 //method to read Health data of a patient
-exports.readHealthdata = function (req, res, next, id) {
+exports.readHealthData = function (req, res, next, id) {
     Patient.findById(id).populate('health_data').exec((err, patient) => {
         if (err) return next(err);
         if (!patient) return next(new Error('Failed to load healthDatas '
@@ -112,15 +112,38 @@ exports.readHealthdata = function (req, res, next, id) {
 exports.createHealthData = function (req, res) {
     const healthdata = new HealthData(req.body);
     healthdata.creator = req.user;
-    healthdata.save((err) => {
+    Patient.findOne({ 'patientID': healthdata.patientID }, function (err, patient) {
         if (err) {
             return res.status(400).send({
                 message: getErrorMessage(err)
             });
-        } else {
-            res.status(200).json(healthdata);
         }
-    });
+        else {
+            healthdata.patient = patient._id;
+
+            patient.save(function (error) {
+                if (!error) {
+                    Patient.findOne({ 'patientID': healthdata.patientID})
+                        .populate('healthdatas')
+                        .exec(function (error, patients) {
+                            console.log(JSON.stringify(patients, null, "\t"))
+                        })
+                }
+            });
+            healthdata.save((err) => {
+                if (err) {
+                    return res.status(400).send({
+                        message: getErrorMessage(err)
+                    });
+                } else {
+
+                    res.status(200).json(healthdata);
+                }
+            });
+        }
+
+        });
+   
 };
 
 //Method to create motivation quote
@@ -138,4 +161,4 @@ exports.createQuote = function (req, res) {
     });
 };
 
-  */
+  
