@@ -56,6 +56,15 @@
     <Compile Include="config\strategies\local.js" />
     <Compile Include="config\strategies\twitter.js" />
     <Compile Include="server.js" />
+    <Content Include="app\views\index.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\signinNurse.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\signinPatient.ejs">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
