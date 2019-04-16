@@ -1,0 +1,34 @@
+<form (ngSubmit)='addReadings()'>
+    <div class='form'>
+        <div>
+            <label>Temparatue: </label>
+            <div>
+                <input type='text' [(ngModel)]="healthData.temparature" name="temparature">
+            </div>
+        </div>
+        <div>
+            <label>Heart Rate: </label>
+            <div>
+                <input type='text' [(ngModel)]="healthData.heartRate" name="heartRate">
+            </div>
+        </div>
+        <div>
+            <label>Blood Pressure: </label>
+            <div>
+                <input type='text' [(ngModel)]="healthData.bloodPressure" name="bloodPressure">
+            </div>
+        </div>
+        <div>
+            <label>Respiratory Rate: </label>
+            <div>
+                <input type='text' [(ngModel)]="healthData.respiratoryRate" name="respiratoryRate">
+            </div>
+        </div>
+        <div>
+            <input type='submit' class='button button-block' value='Add'>
+        </div>
+        <div>
+            <label>{{ errorMsg }}</label>
+        </div>
+    </div>
+</form>

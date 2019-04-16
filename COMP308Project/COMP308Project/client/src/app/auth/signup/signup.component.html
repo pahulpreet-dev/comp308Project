@@ -1,0 +1,47 @@
+<form (ngSubmit)="createUser()">
+    <div class='form'>
+        <div>
+            <label>First Name:</label>
+            <input type="text" [(ngModel)]="user.firstName" name="firstName">
+        </div>
+        <div>
+            <label>Last Name:</label>
+            <input type="text" [(ngModel)]="user.lastName" name="lastName">
+        </div>
+
+        <div>
+            <label>City:</label>
+            <input type="text" [(ngModel)]="user.city" name="city">
+        </div>
+        <div>
+            <label>Phone:</label>
+            <input type="text" [(ngModel)]="user.phone" name="phone">
+        </div>
+        <div>
+            <label>Hospital:</label>
+            <input type="text" [(ngModel)]="user.hospital" name="hospital">
+        </div>
+
+        <div>
+            <label>Username:</label>
+            <input type="text" [(ngModel)]="user.username" name="username">
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" [(ngModel)]="user.password" name="password">
+        </div>
+        <div>
+            <label>Register as:</label><br>
+            <label>
+            <input type="radio" class='option-input radio' name="userType" value="Nurse">
+            Nurse</label><br>
+            <label>
+            <input type="radio" class='option-input radio' name="userType" value="Patient" checked />
+            Patient</label>
+        </div>
+        <div>
+            <input class='button button-block' type="submit" value="Sign up" />
+        </div>
+        <a [routerLink]="['/signin']">Login</a>
+    </div>
+</form>

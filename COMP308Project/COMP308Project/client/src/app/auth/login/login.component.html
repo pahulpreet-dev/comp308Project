@@ -1,0 +1,35 @@
+<form (ngSubmit)="signin()">
+    <div class='form'>
+        <h1>Login</h1>
+        <div *ngIf="userPatient">
+            <label>Patient ID:</label>
+            <input type="text" [(ngModel)]="user.patientId" name="username">
+        </div>
+        <div *ngIf="!userPatient">
+            <label>Username:</label>
+            <input type="text" [(ngModel)]="user.username" name="username">
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" [(ngModel)]="user.password" name="password">
+        </div>
+        <br/>
+        <div>
+            <label>Login as:</label><br>
+            <label>
+          <input type="radio" class='option-input radio' (change)="userType('Nurse')" name="userType" value="Nurse">
+          Nurse</label><br>
+            <label>
+          <input type="radio" class='option-input radio' name="userType" value="Patient" (change)="userType('Patient')" checked />
+          Patient</label>
+        </div>
+        <br>
+        <div>
+            <input class="button button-block" type="submit" value="Sign In">
+        </div>
+        <br/>
+        <a [routerLink]="['/signup']">Sign Up</a><br/><br/>
+        <a [routerLink]="['/home']">Cancel</a>
+        <span>{{errorMessage}}</span>
+    </div>
+</form>

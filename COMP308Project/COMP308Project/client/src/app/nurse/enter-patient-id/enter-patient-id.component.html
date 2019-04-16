@@ -1,0 +1,11 @@
+<form (ngSubmit)="getPatient()">
+    <div class='form'>
+        <div>
+            <label>Enter the patient id:</label>
+            <input type="text" [(ngModel)]="patientId" name="patientId">
+        </div>
+        <div>
+            <input class='button button-block' type="submit" value="Get Details" />
+        </div>
+    </div>
+</form>

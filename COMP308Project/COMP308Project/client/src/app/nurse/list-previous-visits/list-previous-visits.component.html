@@ -1,0 +1,13 @@
+<div class="form">
+    <h2>Previous Visits:</h2>
+    <table width=100%>
+        <th>Date</th>
+        <tr *ngFor="let data of sortedHealth">
+            <td>{{ data.created }}</td>
+            <td>
+                <a [routerLink]="[]" routerLinkActive="a" (click)="viewDetails(data)">View</a>
+            </td>
+        </tr>
+    </table>
+    <a [routerLink]="['/home']">Go Home</a><br><br>
+</div>
