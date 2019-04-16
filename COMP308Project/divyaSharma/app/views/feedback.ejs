@@ -1,0 +1,63 @@
+<% docs.forEach(function(docs){ %>
+
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<style>
+		#headDIV{
+			width:80%; border-style:solid; background-color:blue; margin-left:10%; border-width:1px;
+		}
+		
+		#headH2{
+			margin:0px; text-align:center; font-family:arial; color:white;
+		}
+		
+		body {
+			background-color: darkslategrey;
+			color: azure;
+			font-family:Arial, Helvetica, sans-serif;
+		}
+	</style>
+
+	</head>
+	<body>
+			<h2> Welcome</h2>
+		<div style="width:auto; height:auto; border-style: solid">
+			<form method="POST">
+				<table>
+						<tr>
+							<td><label>First Name 		 : </label></td>
+							<td><input type="text" id="fName" value=<%= docs.FirstName %> name="fName" placeholder="Enter First Name" disabled></td>
+						</tr>
+						<tr>
+							<td><label>Last Name	     : </label></td>
+							<td><input type="text" id="lName" value=<%= docs.LastName %> name="lName" placeholder="Enter Last Name" disabled></td>
+						</tr>
+						<tr>
+							<td><label>Email    	     : </label></td>
+							<td><input type="text" id="email" name="Email" value=<%= docs.Email %> disabled></td>
+						</tr>
+						<tr>
+							<td><label>Comment 		     : </label></td>
+							<td><input type="text" value=<%= docs.FeedBack %> disabled></td>
+						</tr>
+						<tr>
+							<td><label>Favorite Language : </label></td>
+							<td><input type="text" id="fLang" name="fLang" placeholder="Enter Favorite Language" disabled value=<%= docs.FavoriteSport %> ></td>
+						</tr>
+						
+					</table>
+				</form>
+		</div>
+		<br/>
+
+		<form method="POST">
+			<td><input type="submit" id="submit" name="EDIT" value="EDIT/DELETE" style="width:80%; margin-left: 10%" formaction="/feedbackEdit"></td>
+		</form>
+	</body>
+</html>
+
+<% })%>

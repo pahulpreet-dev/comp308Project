@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        #headDIV{
+            width:80%; border-style:solid; background-color:blue; margin-left:10%; border-width:1px;
+        }
+        
+        #headH2{
+            margin:0px; text-align:center; font-family:arial; color:white;
+        }
+        
+        body {
+            background-color: darkslategrey;
+            color: azure;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+		<title> INDEX </title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body>
+		<div id="headDIV">
+		 <h2 id="headH2"> WELCOME TO NODE JS TUTORING </h2>
+		</div>
+        
+		<br/>
+        <label style="font-family:arial"> <%= Error%> </label>
+        <% docs.forEach(function(docs){ %>
+            <div style="width:auto; height:auto; border-style: solid">
+                <form method="POST">
+                    <table>
+                        <tr>
+                            <td><label>First Name 		 : </label></td>
+                            <td><input type="text" id="fName" name="fName" value=<%= docs.FirstName %> placeholder="Enter First Name" ></td>
+                        </tr>
+                        <tr>
+                            <td><label>Last Name	     : </label></td>
+                            <td><input type="text" id="lName" name="lName" value=<%= docs.LastName %> placeholder="Enter Last Name" ></td>
+                        </tr>
+                        <tr>
+                            <td><label>Email    	     : </label></td>
+                            <td><input type="text" id="email" name="email" value=<%= docs.Email %>></td>
+                        </tr>
+                        <tr>
+                            <td><label>Comment 		     : </label></td>
+                            <td><input type="text" id="FeedBack" name="FeedBack" value=<%= docs.FeedBack %>></td>
+                        </tr>
+                        <tr>
+                            <td><label>Favorite Language : </label></td>
+                            <td><input type="text" id="fLang" name="fLang" placeholder="Enter Favorite Language"  value=<%= docs.FavoriteSport %> ></td>
+                        </tr>
+                            
+                        </table>
+                        <input type="submit" id="edit" name="edit" value="EDIT" style="width:80%; margin-left: 10%" formaction="/editData">
+                        <input type="submit" id="delete" name="delete" value="DELETE" style="width:80%; margin-left: 10%" formaction="/deleteData">
+                    </form>
+                    
+            </div>
+            <form method="POST">
+                
+            </form>
+        <% })%>
+    </body>
+    </html>

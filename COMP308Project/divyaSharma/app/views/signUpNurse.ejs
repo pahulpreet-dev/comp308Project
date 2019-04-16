@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> INDEX </title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+		<style>
+			#headDIV{
+				width:80%; border-style:solid; background-color:blue; margin-left:10%; border-width:1px;
+			}
+			
+			#headH2{
+				margin:0px; text-align:center; font-family:arial; color:white;
+			}
+			
+			body {
+				background-color: darkslategrey;
+				color: azure;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="headDIV">
+		 <h2 id="headH2"> WELCOME TO NODE NURSING SERVICES </h2>
+		</div>
+		<br/>
+        <label style="font-family:arial"> <%= Error%> </label>
+
+        <form method="POST">
+			<div style="width:18%; float: left; border-style:solid; border-width:1px; margin-left: 40%">
+				<table style="text-align:center">
+					<tr>
+						<td colspan="2"> <label style="font-family:arial"> NURSE REGESTRATION </label> </td>						
+					</tr>
+					<tr>
+						<td> <label style="font-family:arial">User Name </label> </td>
+						<td><input type="email" id="username" name="username" placeholder="User Name"></td>
+                    </tr>
+                    <tr>
+						<td> <label style="font-family:arial">First Name </label> </td>
+						<td><input type="text" id="fName" name="fName" placeholder="First Name"></td>
+                    </tr>
+                    <tr>
+						<td> <label style="font-family:arial">Last Name </label> </td>
+						<td><input type="text" id="lName" name="lName" placeholder="Last Name"></td>
+					</tr>
+					<tr>
+						<td><label style="font-family:arial">Password </label></td>
+						<td><input type="password" id="password" name="password" placeholder="Password"></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" id="create" name="create" value="CreateUserNurse" style="width:100%" formaction="createUser"></td>						
+					</tr>				
+				</table>
+			</div>	
+        </form>
+        
+    </body>
+</html>

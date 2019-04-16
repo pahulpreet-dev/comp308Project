@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title> INDEX </title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+		<style>
+			#headDIV{
+				width:80%; border-style:solid; background-color:blue; margin-left:10%; border-width:1px;
+			}
+			
+			#headH2{
+				margin:0px; text-align:center; font-family:arial; color:white;
+			}
+			
+			body {
+				background-color: darkslategrey;
+				color: azure;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="headDIV">
+		 <h2 id="headH2"> WELCOME TO NODE NURSING SERVICES </h2>
+		</div>
+		<br/>
+		<label style="font-family:arial"> <%= Error%> </label>
+<!-- FORM FOR NURSES -->
+		<form method="POST">
+			<div style="width:18%; float: left; border-style:solid; border-width:1px; margin-left: 28%">
+				<table style="text-align:center">
+					<tr>
+						<td colspan="2"> <label style="font-family:arial"> SIGN IN AS NURSE </label> </td>						
+					</tr>
+					<tr>
+						<td> <label style="font-family:arial">User Name </label> </td>
+						<td><input type="email" id="username" name="username" placeholder="User Name"></td>
+					</tr>
+					<tr>
+						<td><label style="font-family:arial">Password </label></td>
+						<td><input type="password" id="password" name="password" placeholder="Password"></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" id="signIn" name="signIn" value="SignInNurse" style="width:100%" formaction="signInPatient"></td>						
+					</tr>
+					<tr>
+					 	<td colspan="2"><input type="submit" id="signUp" name="signUp" value="SignUpNurse" style="width:100%" formaction="signUpPatient"></td>			
+					</tr>
+				</table>
+			</div>	
+		</form>
+
+<!-- FORM FOR PATIENT	 -->
+		
+		<form method="POST">
+			<div style="width:18%; float: left; border-style:solid; border-width:1px; margin-left: 10%">
+				<table style="text-align:center">
+					<tr>
+						<td colspan="2"> <label style="font-family:arial"> SIGN IN AS PATIENT </label> </td>						
+					</tr>
+					<tr>
+						<td> <label style="font-family:arial">User Name </label> </td>
+						<td><input type="email" id="username" name="username" placeholder="User Name"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" id="signIn" name="signIn" value="SignInPatient" style="width:100%" formaction="signInNurse"></td>		
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" id="signUp" name="signUp" value="SignUpPatient" style="width:100%" formaction="signUpNurse"></td>		
+					</tr>
+				</table>
+			</div>	
+		</form>
+	</body>
+</html>

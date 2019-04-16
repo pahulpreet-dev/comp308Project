@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        #headDIV{
+            width:80%; border-style:solid; background-color:blue; margin-left:10%; border-width:1px;
+        }
+        
+        #headH2{
+            margin:0px; text-align:center; font-family:arial; color:white;
+        }
+        
+        body {
+            background-color: darkslategrey;
+            color: azure;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+		<title> INDEX </title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body>
+		<div id="headDIV">
+		 <h2 id="headH2"> WELCOME TO NODE JS TUTORING </h2>
+		</div>
+        
+		<br/>
+		<label style="font-family:arial"> <%= Error%> </label>
+		<form method="POST">
+		<div style="width:25%; margin-left:38%; border-style:solid; border-width:1px">
+			<table style="text-align:left">
+				<tr>
+					<td> <label style="font-family:arial"> First Name </label> </td>
+					<td><input type="text" id="firstName" name="firstName" placeholder="First Name" required></td>
+				</tr>
+				<tr>
+					<td><label style="font-family:arial"> Last Name </label></td>
+					<td><input type="text" id="lastName" name="lastName" placeholder="Last Name" required></td>
+				</tr>
+				<tr>
+					<td> <label style="font-family:arial">User Name </label> </td>
+					<td><input type="email" id="userName" name="userName" placeholder="User Name" required></td>
+				</tr>
+				<tr>
+					<td><label style="font-family:arial">Password </label></td>
+					<td><input type="password" id="password" name="password" placeholder="Password" required></td>
+                </tr>
+                <tr>
+                    <td><label style="font-family:arial">Re Enter Password </label></td>
+                    <td><input type="password" id="rePassword" name="rePassword" placeholder="Re Enter Password" required></td>
+				</tr>
+				<tr>
+                    <td><label style="font-family:arial">Comment </label></td>
+                    <td><textarea rows="4" cols="15" id="feedBack" name="feedBack" placeholder="Comments" required> </textarea></td>
+				</tr>
+				<tr>
+                    <td><label style="font-family:arial">Favorite Sport </label></td>
+                    <td><input type="text" id="favSport" name="favSport" placeholder="Favorite Sport" required></td>
+                </tr>
+				<tr>
+					<td colspan="2"><input type="submit" id="signUp" name="signUp" value="Sign Up" style="width:100%"></td>
+				</tr>
+			</table>
+		</div>
+			
+		</form>
+
+    </body>
+</html>
