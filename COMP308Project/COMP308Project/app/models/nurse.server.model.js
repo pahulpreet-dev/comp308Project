@@ -80,7 +80,7 @@ NurseSchema.methods.authenticate = function (password) {
 };
 
 // Find possible not used username
-NurseSchema.statics.findUniqueNursename = function (username, suffix, callback) {
+NurseSchema.statics.findUniqueUsername = function (username, suffix, callback) {
     // Add a 'username' suffix
     const possibleNursename = username + (suffix || '');
 
@@ -94,7 +94,7 @@ NurseSchema.statics.findUniqueNursename = function (username, suffix, callback) 
             if (!nurse) {
                 callback(possibleNursename);
             } else {
-                return this.findUniqueNursename(username, (suffix || 0) + 1, callback);
+                return this.findUniqueUsername(username, (suffix || 0) + 1, callback);
             }
         } else {
             callback(null);

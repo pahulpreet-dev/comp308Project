@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 
 // Define a new 'PatientSchema'
 const PatientSchema = new Schema({
+  
     firstName: String,
     lastName: String,
     patientID: {

@@ -60,6 +60,23 @@ exports.signup = function (req, res) {
     });
 }
 
+exports.createQuote = function (req, res) {
+    const quote = new Motivation(req.body);
+   
+    // Try saving the User
+    quote.save((err) => {
+        if (err) {
+            return res.status(400).send({
+                message: getErrorMessage(err)
+            });
+        } else {
+           
+            res.status(200).json(quote);
+         
+        }
+    });
+}
+
 //uses the Passport-initiated req.
 //isAuthenticated() method to check whether a user is currently authenticated
 exports.requiresLogin = function (req, res, next) {
@@ -98,15 +115,18 @@ exports.listQuotes = function (req, res) {
 };
 
 //method to read Health data of a patient
-exports.readHealthData = function (req, res, next, id) {
-    Patient.findById(id).populate('health_data').exec((err, patient) => {
-        if (err) return next(err);
-        if (!patient) return next(new Error('Failed to load healthDatas '
-            + id));
-        req.patient = patient;
-        next();
+exports.readHealthData = function (req, res, next) {
+    HealthData.find().exec((err, health) => {
+        if (err) {
+            return res.status(400).send({
+                message: getErrorMessage(err)
+            });
+        } else {
+            res.status(200).json(health);
+        }
     });
 };
+
 
 //Method to create Health data record
 exports.createHealthData = function (req, res) {
