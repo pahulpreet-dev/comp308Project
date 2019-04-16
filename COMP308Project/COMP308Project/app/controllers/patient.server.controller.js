@@ -31,7 +31,7 @@ const getErrorMessage = function (err) {
     return message;
 };
 
-//Method to crease new Nurse user
+//Method to crease new Patient user
 exports.signup = function (req, res) {
     const patient = new Patient(req.body);
     patient.provider = 'local';
@@ -82,7 +82,7 @@ exports.listQuotes = function (req, res) {
         }
     });
 };
-
+/*
 //method to read Health data of a patient
 exports.readHealthData = function (req, res, next, id) {
     Patient.findById(id).populate('health_data').exec((err, patient) => {
@@ -92,7 +92,7 @@ exports.readHealthData = function (req, res, next, id) {
         req.patient = patient;
         next();
     });
-};
+};*/
 
 //Method to create Health data record
 exports.createHealthData = function (req, res) {
@@ -132,5 +132,67 @@ exports.createHealthData = function (req, res) {
 
 };
 
+// Method to get list of values from selected checkboxes
+onclick = 'buildlist("YourCheckBoxName","SelectedValues");'
+exports.retrieveQuotes = function (req, res) {
+    req.body.SelectedValues;
+    var controls = document.getElementsByName(listName);
+    var label = document.getElementsByName(labelName);
+    label.value = '';
+    for (var i = 0; i < controls.length; i++) {
+        res.value += controls[i].value.toString() + ',';
+    }
+};
 
 
+// Method to run motivational video
+// Route for getting all the files
+app.get('/files', (req, res) => {
+    let filesData = [];
+    let count = 0;
+    gfs.collection('ctFiles'); // set the collection to look up into
+
+    gfs.files.find({}).toArray((err, files) => {
+        // Error checking
+        if (!files || files.length === 0) {
+            return res.status(404).json({
+                responseCode: 1,
+                responseMessage: "error"
+            });
+        }
+        // Loop through all the files and fetch the necessary information
+        files.forEach((file) => {
+            filesData[count++] = {
+                originalname: file.metadata.originalname,
+                filename: file.filename,
+                contentType: file.contentType
+            }
+        });
+        res.json(filesData);
+    });
+});
+
+
+// Downloading a single file
+app.get('/file/:filename', (req, res) => {
+    gfs.collection('ctFiles'); //set collection name to lookup into
+
+    /** First check if file exists */
+    gfs.files.find({ filename: req.params.filename }).toArray(function (err, files) {
+        if (!files || files.length === 0) {
+            return res.status(404).json({
+                responseCode: 1,
+                responseMessage: "error"
+            });
+        }
+        // create read stream
+        var readstream = gfs.createReadStream({
+            filename: files[0].filename,
+            root: "ctFiles"
+        });
+        // set the proper content type 
+        res.set('Content-Type', files[0].contentType)
+        // Return response
+        return readstream.pipe(res);
+    });
+});
